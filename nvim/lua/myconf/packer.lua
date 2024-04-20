@@ -9,6 +9,21 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use {
+    "ThePrimeagen/refactoring.nvim",
+    requires = {
+        {"nvim-lua/plenary.nvim"},
+        {"nvim-treesitter/nvim-treesitter"}
+    }
+  }
+
+  use({
+      "stevearc/oil.nvim",
+      config = function()
+          require("oil").setup()
+      end,
+  })
+
+  use {
       "zbirenbaum/copilot.lua",
        cmd = "Copilot",
        event = "InsertEnter",

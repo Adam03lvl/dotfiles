@@ -1,5 +1,5 @@
 vim.g.mapleader= " "
-vim.keymap.set("n", "<leader>e", ":Ex<CR>",{})
+vim.keymap.set("n", "<leader>e", "<cmd>Oil<CR>",{})
 
 vim.keymap.set("n","<leader>gs",vim.cmd.Git)
 vim.keymap.set("n","<leader>gm","<cmd>Git commit<CR>")
@@ -53,3 +53,15 @@ vim.keymap.set('n', '<leader><leader>', ':Telescope cmdline<CR>', { noremap = tr
 vim.keymap.set('v', '<C-p>', ':CarbonNow<CR>', {silent = true})
 
 vim.keymap.set('n', '<C-b>', ':lua require("buffer_manager.ui").toggle_quick_menu()<CR>', { noremap = true })
+
+vim.keymap.set("x", "<leader>re", ":Refactor extract ")
+vim.keymap.set("x", "<leader>rf", ":Refactor extract_to_file ")
+
+vim.keymap.set("x", "<leader>rv", ":Refactor extract_var ")
+
+vim.keymap.set({ "n", "x" }, "<leader>ri", ":Refactor inline_var")
+
+vim.keymap.set( "n", "<leader>rI", ":Refactor inline_func")
+
+vim.keymap.set("n", "<leader>rb", ":Refactor extract_block")
+vim.keymap.set("n", "<leader>rbf", ":Refactor extract_block_to_file")
