@@ -8,6 +8,20 @@ return require('packer').startup(function(use)
 
   use 'wbthomason/packer.nvim'
 
+  use 'chentoast/marks.nvim'
+
+  use {
+      'kristijanhusak/vim-dadbod-ui',
+      requires = {
+        'tpope/vim-dadbod',
+        'kristijanhusak/vim-dadbod-completion'
+      }
+  }
+
+  use 'lewis6991/gitsigns.nvim'
+
+  use 'RaafatTurki/hex.nvim'
+
   use {
     "ThePrimeagen/refactoring.nvim",
     requires = {
@@ -61,7 +75,10 @@ return require('packer').startup(function(use)
 	requires = {'nvim-lua/plenary.nvim'}
   }
 
-  use 'mfussenegger/nvim-dap-python'
+  use {
+      'mfussenegger/nvim-dap-python',
+      requires = {'rcarriga/nvim-dap-ui'}
+  }
 
   use {
     'numToStr/Comment.nvim',
@@ -88,8 +105,8 @@ return require('packer').startup(function(use)
   }
 
   use {
-    'rcarriga/nvim-dap-ui',
-    requires = { 'mfussenegger/nvim-dap', 'rcarriga/cmp-dap' }
+      "rcarriga/nvim-dap-ui", 
+      requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio", 'rcarriga/cmp-dap'}
   }
 
   use 'mfussenegger/nvim-jdtls'

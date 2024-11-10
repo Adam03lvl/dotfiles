@@ -25,4 +25,4 @@ cmp.setup.filetype({
     }
 })
 
-require("luasnip.loaders.from_vscode").load({include = {"python", "c", "html", "javascript"}})
+require("luasnip.loaders.from_vscode").load({include = {"python", "c", "cpp", "html", "javascript"}})

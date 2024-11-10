@@ -15,7 +15,9 @@ require("catppuccin").setup({
 local function setColor()
     vim.g.material_style = "deep ocean"
     -- vim.cmd 'colorscheme nightfly'
+    -- vim.cmd 'colorscheme moonfly'
     vim.cmd 'colorscheme catppuccin'
+    -- vim.cmd 'colorscheme material'
 end
 
 setColor()

@@ -7,6 +7,7 @@ lsp_zero.on_attach(function(client, bufnr)
 end)
 
 vim.filetype.add({ extension = { templ = "templ" } })
+vim.filetype.add({ extension = { sql = "sql" } })
 
 -- see :help lsp-zero-guide:integrate-with-mason-nvim
 -- to learn how to use mason.nvim with lsp-zero

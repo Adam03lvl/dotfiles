@@ -1,10 +1,16 @@
 vim.g.mapleader= " "
 vim.keymap.set("n", "<leader>e", "<cmd>Oil<CR>",{})
 
+vim.keymap.set("n", "<leader>hh", "<cmd>HexToggle<CR>",{})
+
+vim.keymap.set("n", "<leader>bd", "<cmd>DBUI<CR>",{})
+
 vim.keymap.set("n","<leader>gs",vim.cmd.Git)
 vim.keymap.set("n","<leader>gm","<cmd>Git commit<CR>")
 vim.keymap.set("n","<leader>gp","<cmd>Git push<CR>")
-vim.keymap.set("n","<leader>gl","<cmd>Git log --oneline<CR>")
+vim.keymap.set("n","<leader>gl","<cmd>Git log <CR>")
+
+vim.keymap.set("n","<leader>gh","<cmd>Gitsigns preview_hunk<CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -42,7 +48,8 @@ vim.keymap.set("n","<leader>cB",vim.cmd.CMakeSelectBuildType)
 
 vim.keymap.set("n","<leader>bb",":DapToggleBreakpoint<CR>")
 vim.keymap.set("n","<leader>ba",":DapContinue<CR>")
-vim.keymap.set("n","<leader>br",":lua require('dap-python').test_method()<CR>")
+vim.keymap.set("n","<leader>tm",":lua require('dap-python').test_method()<CR>")
+vim.keymap.set("n","<leader>tc",":lua require('dap-python').test_class()<CR>")
 
 vim.keymap.set("n","<leader>mc",":Mvn clean<CR>")
 vim.keymap.set("n","<leader>mp",":Mvn package<CR>")
