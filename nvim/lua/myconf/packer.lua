@@ -8,6 +8,9 @@ return require('packer').startup(function(use)
 
   use 'wbthomason/packer.nvim'
 
+  use 'rebelot/terminal.nvim'
+
+  use 'jpmcb/nvim-llama'
   use 'chentoast/marks.nvim'
 
   use {
@@ -36,15 +39,6 @@ return require('packer').startup(function(use)
           require("oil").setup()
       end,
   })
-
-  use {
-      "zbirenbaum/copilot.lua",
-       cmd = "Copilot",
-       event = "InsertEnter",
-       config = function()
-           require("copilot").setup({})
-       end,
-  }
 
   use {"ellisonleao/carbon-now.nvim", config = function() require('carbon-now').setup() end}
 

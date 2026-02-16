@@ -1,20 +1,22 @@
-local lsp_zero = require('lsp-zero')
+-- Mason setup
+require('mason').setup()
+require('mason-lspconfig').setup()
 
-lsp_zero.on_attach(function(client, bufnr)
-    -- see :help lsp-zero-keybindings
-    -- to learn the available actions
-    lsp_zero.default_keymaps({buffer = bufnr})
-end)
+local vue_path = "/home/fr3udian/.local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server"
 
-vim.filetype.add({ extension = { templ = "templ" } })
-vim.filetype.add({ extension = { sql = "sql" } })
+vim.lsp.config["ts_ls"] = {
+  filetypes = {'typescript', 'javascript', 'typescriptreact', 'javascriptreact', 'vue'},
+  init_options = {
+    plugins = {
+      {
+        name = "@vue/typescript-plugin",
+        location = vue_path,
+        languages = { "vue" },
+      },
+    },
+  }
+}
 
--- see :help lsp-zero-guide:integrate-with-mason-nvim
--- to learn how to use mason.nvim with lsp-zero
-require('mason').setup({})
-require('mason-lspconfig').setup({
-    handlers = {
-        lsp_zero.default_setup,
-    }
-})
-
+vim.lsp.config["vue_ls"] = {
+  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue'}
+}
